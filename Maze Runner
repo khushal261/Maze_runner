@@ -1,0 +1,169 @@
+#include <stdio.h>
+#include <conio.h>
+
+int arr[10]={ 0,1,2,3,4,5,6,7,8,9};
+int shape()
+{
+    printf("A Project By Ahmed Khushal Khan\n\n");         	
+    printf("\n\n\t\t\t\t\t\tTIC TAC TOE\n\n");
+
+   
+
+    printf("\t\t\t\t _____ _____ _____\n");
+    printf("\t\t\t\t|     |     |     |\n");
+    printf("\t\t\t\t|  %d  | %d   | %d   |\n", arr[1], arr[2], arr[3]);
+
+    printf("\t\t\t\t|_____|_____|_____|\n");
+    printf("\t\t\t\t|     |     |     |\n");
+
+    printf("\t\t\t\t|  %d  |  %d  |  %d  |\n", arr[4], arr[5], arr[6]);
+
+    printf("\t\t\t\t|_____|_____|_____|\n");
+    printf("\t\t\t\t|     |     |     |\n");
+
+    printf("\t\t\t\t|  %d  |  %d  |  %d  |\n", arr[7], arr[8], arr[9]);
+    printf("\t\t\t\t|_____|_____|_____|\n\n\n");
+    
+}
+
+int main()
+{                    
+
+         //char again='y';
+         
+    int i,a;
+
+     int xyz;
+   int plyr=1;
+       do
+    {
+        shape();
+        
+
+        printf("\t\t\tPlayer  %d === Enter number from 1 to 9:  ",plyr);
+        scanf("%d",&a);
+
+        plyr=(plyr%2)?1:2;
+
+        xyz=(plyr==1)?0:1;
+
+        if ((a==1)&&(arr[1]==1))
+        {
+		          arr[1]=xyz;
+        }
+        else if ((a==2)&&(arr[2]==2))
+        {
+            arr[2]=xyz;
+        }
+        else if ((a==3)&&(arr[3]==3))
+        {
+		   arr[3]=xyz;
+        } 
+        else if ((a==4)&&(arr[4]==4))
+        {
+            arr[4]=xyz;
+        }
+        else if ((a==5)&&(arr[5]==5))
+        {
+            arr[5]=xyz;
+        }
+        else if ((a==6)&&(arr[6]==6))
+        {
+            arr[6]=xyz;
+        }
+        else if ((a==7)&&(arr[7]==7))
+		{
+		   arr[7]=xyz;
+        }
+        else if ((a==8)&&(arr[8]==8))
+        {
+		
+            arr[8]=xyz;
+       }
+        else if ((a==9)&&(arr[9]==9))
+        {
+		
+            arr[9]=xyz;
+        }
+        else
+        {
+            printf("wrong number\n ");
+            //plyr++;
+            
+        }
+        i = winner();
+        plyr--;
+        
+    }while (i==-1);
+    
+    if (i==0)
+    {
+	
+    //delay(50);
+    printf("\nCONGRATE YOU WIN THE GAME\n");
+        printf("\n\aPLAYER NO:%d WIN THE GAME ", --plyr);
+    }
+	else
+	{
+	
+        printf("\nTRY AGAIN GAME DRAW\a");
+    }
+ 
+
+    return 0;
+    
+}
+
+
+int winner()
+{
+
+    if ((arr[1]==arr[2])&&(arr[2]==arr[3]))
+    {
+	
+       }
+    else if ((arr[4]==arr[5])&&(arr[5]==arr[6]))
+    {
+	
+    
+    }
+    else if ((arr[7]==arr[8])&&(arr[8]==arr[9]))
+    {
+	
+        }
+    else if ((arr[1]==arr[4])&&(arr[4]==arr[7]))
+    {
+	
+    
+    }
+    else if ((arr[2]==arr[5])&&(arr[5]==arr[8]))
+    {
+	
+        }
+    else if ((arr[3]==arr[6])&&(arr[6]==arr[9]))
+    {
+	
+    
+    }
+    else if ((arr[1]==arr[5])&&(arr[5]==arr[9]))
+    {
+	
+    
+    }
+    else if ((arr[3]==arr[5])&&(arr[5]==arr[7]))
+    {
+	
+    
+    }
+    else if ((arr[1]!=1)&&(arr[2]!=2)&&(arr[3]!=3)&&(arr[4]!=4)&&(arr[5]!=5)&&(arr[6]!=6)&&(arr[7]!=7)&&(arr[8]!=8)&&(arr[9]!= 9))
+    {
+	
+        
+    }
+       else
+       {
+	   
+       return  -1;
+}}
+
+
